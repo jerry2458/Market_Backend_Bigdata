@@ -18,6 +18,7 @@
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="{% static 'blog/css/blog-post.css' %}" media="screen">
+  <script src="https://kit.fontawesome.com/6b49d3c93a.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -91,6 +92,15 @@
 
         <!-- Post Content -->
         <p>{{ post.content }}</p>
+        {% if post.file_upload %}
+        <a href="{{ post.file_upload.url }}" class="btn btn-outline-dark" role="button">
+        다운로드:
+<!--          <i class="fa-solid fa-file-arrow-down"></i>-->
+          <i class="far fa-file"></i>
+
+          {{ post.get_file_name }}
+          <a/>
+          {% endif %}
         <hr>
 
         <!-- Comments Form -->
