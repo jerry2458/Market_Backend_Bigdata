@@ -5,7 +5,8 @@ from blog.models import Post, Category
 
 admin.site.register(Post)
 
-class CatagotyAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug':('name', )}
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name', )}
 
-admin.site.register(Category, CatagotyAdmin)
+
+admin.site.register(Category, CategoryAdmin)
